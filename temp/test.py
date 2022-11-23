@@ -23,4 +23,18 @@ aftv = setup(
     signer=signer,
 )
 
-print(aftv.available)
+print(f"aftv.available: {aftv.available}")
+
+print(f"aftv.device_properties: {aftv.device_properties}")
+
+# print(aftv.adb_shell("input keyevent HOME"))
+
+# print(aftv.adb_shell("dumpsys audio"))
+
+print(aftv.update())
+# print("screen and wake")
+# print(aftv.screen_on_awake_wake_lock_size())
+print("properties directly")
+from androidtv import constants
+# print(constants.CMD_SCREEN_ON_AWAKE_WAKE_LOCK_SIZE)
+print(aftv.get_properties_dict(get_running_apps=True))
